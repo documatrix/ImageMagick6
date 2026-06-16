@@ -8940,7 +8940,7 @@ static MagickBooleanType WriteOnePNGImage(MngInfo *mng_info,
   tried_333 = MagickFalse;
   tried_444 = MagickFalse;
 
-  if (image->depth != GetImageDepth(image,&image->exception))
+  if (image->depth > 8 && image->depth != GetImageDepth(image,&image->exception))
     (void) SetImageDepth(image,image->depth);
   for (j=0; j<6; j++)
   {
