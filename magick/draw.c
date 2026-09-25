@@ -3876,7 +3876,7 @@ static MagickBooleanType RenderMVGContent(Image *image,
                 graphic_context[n]->stroke_opacity;
             else
               graphic_context[n]->stroke.opacity=ClampToQuantum(
-                (MagickRealType) QuantumRange*opacity);
+                (MagickRealType) QuantumRange*(1.0-opacity));
             break;
           }
         if (LocaleCompare("stroke-width",keyword) == 0)
